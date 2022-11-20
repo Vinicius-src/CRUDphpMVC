@@ -1,0 +1,23 @@
+<div class="container-fluid d-flex justify-content-center my-5">
+
+    <form action="home-publicacao-atualizar" method="post" class="col-6">
+      <input type="hidden" name="id" value="<?=$result[0]['id_publicacao']?>">
+        <p class="h4 my-5">Editar publicação</p>
+        <div class="mb-3">
+          <label for="titulo" class="form-label">Titulo da publicação:</label>
+          <input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="Titulo" value="<?=$result[0]['titulo']?>">
+        </div>
+        <div class="mb-3">
+          <label for="data" class="form-label">Data da publicação:</label>
+          <input type="date" class="form-control" name="data" id="data" value="<?=$result[0]['data']?>">
+        </div>
+        <div class="mb-3 ">
+            <label class="form-label" for="conteudo">Conteudo da publicação:</label>
+            <textarea class="form-control" name="conteudo" id="conteudo" rows="4"><?=$result[0]['conteudo']?></textarea>
+        </div>
+        <div class="mb-3 class d-flex justify-content-center ">
+            <button  type="submit" name="atualizarPublicacao" class="mx-auto btn col-4 btn-primary">Enviar</button>
+         </div>
+       
+    </form>
+</div>

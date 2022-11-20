@@ -1,0 +1,51 @@
+<form action="home" method="POST" class="input-group mx-auto my-5 justify-content-center w-25">
+    <span class="input-group-text p-0" id="basic-addon1">
+        <button class="btn  m-0" type="submit" name="buscar"><i class="bi bi-search"></i></button></span>
+    <input class="form-control " type="text" name="busca" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon1" required>
+</form>
+
+<div class="container-fluid d-flex justify-content-end pe-5">
+    <a clas="w-25 " href="criar_publicacao" alt="criar publicação" ><img src="https://cdn-icons-png.flaticon.com/512/1004/1004733.png" width="50" alt="criar publicação"></a>
+    
+</div>
+
+<div class="container-fluid mx-5 text-justify">
+<?php
+     if($publicacao==1){
+        $publicacao='Nenhuma publicação para apresentar!';
+    }elseif($publicacao==2){
+        $publicacao='Nenhuma publicação encontrada!';
+    }else{
+
+
+        ?>
+          <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Titulo</th>
+                <th scope="col">Data</th>
+                </tr>
+            </thead>
+        <?php
+        foreach ($publicacao as $row)
+        {
+        ?>
+      
+            <tbody>
+                <tr>
+                <td>
+                    <form action="home-publicacao" method="post" >
+                        <input type="hidden" name="id" value="<?=$row['id_publicacao']?>">
+                        <button class="btn btn-lg btn-link" type="submit" name="abrirPublicacao" ><?=$row['titulo'];?> </button>
+                        
+                    </form>
+
+                   
+                
+                </td>
+                <td><?=$row['data'];}}?></td>
+                </tr>
+            </tbody>
+        </table>
+
+</div>
